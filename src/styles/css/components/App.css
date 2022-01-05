@@ -433,3 +433,105 @@ body {
   width: min(45.66rem, 90%);
   margin: 0 auto;
 }
+
+.comment {
+  width: 100%;
+  min-height: 167px;
+  background: var(--clr-neutral-white);
+  border-radius: 8px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: auto;
+  column-gap: 24px;
+  row-gap: 15px;
+  margin-bottom: 20px;
+}
+.comment .comment__score {
+  overflow: hidden;
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 100px;
+  background-color: #f5f6fa;
+  border-radius: 10px;
+}
+.comment .comment__score > * {
+  width: 100%;
+  height: 33%;
+}
+.comment .comment__score button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comment .comment__score .comment__score-counter {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #5357b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comment .comment__header {
+  display: flex;
+  align-items: center;
+  grid-column: 2/-1;
+  grid-row: 1/2;
+}
+.comment .comment__header .comment__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.comment .comment__header .comment__username {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--clr-neutral-dark-blue);
+  margin-right: 16px;
+}
+.comment .comment__header .comment__date {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #67727e;
+}
+.comment .comment__header .comment__button {
+  margin-left: auto;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  /* Moderate Blue */
+  color: #5357b6;
+}
+.comment .comment__header .comment__button .comment__button-image {
+  margin-right: 8px;
+}
+.comment .comment__body {
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+}
+.comment .comment__body p {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  color: #67727e;
+}
