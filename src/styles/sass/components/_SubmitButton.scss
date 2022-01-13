@@ -1,0 +1,18 @@
+.btn-submit {
+  text-transform: uppercase;
+  padding: 12px 30px;
+  background-color: var(--clr-primary-blue);
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+
+  color: var(--clr-neutral-white);
+
+  &:disabled {
+    cursor: not-allowed;
+
+    background-color: var(--clr-primary-light-blue);
+  }
+}

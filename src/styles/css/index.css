@@ -1,5 +1,5 @@
 body {
   padding-top: 64px;
-  background-position: 64px;
-  background-color: #F5F6FA;
+  padding-bottom: 64px;
+  background-color: var(--clr-neutral-very-light-gray);
 }

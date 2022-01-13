@@ -1,0 +1,20 @@
+.commentForm {
+  width: 100%;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.commentForm__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.commentForm__textarea {
+  margin-right: 16px;
+}

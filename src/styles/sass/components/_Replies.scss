@@ -1,0 +1,21 @@
+.replies {
+  position: relative;
+  width: 100%;
+  padding-left: calc(43px + 2px + 43px);
+
+  > * + * {
+    margin-top: 20px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    background-color: var(--clr-neutral-light-gray);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 43px;
+  }
+}

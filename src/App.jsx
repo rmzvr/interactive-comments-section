@@ -1,18 +1,37 @@
 import "./styles/sass/components/App.scss";
-import data from "./data.json";
-import Comment from "./components/Comment";
+import React, { useEffect, useState } from "react";
+import { UserContext } from "./components/context";
+import CommentsList from "./components/comments/CommentsList";
+import UserService from "./components/API/UserService";
 
 function App() {
-  const comments = data.comments;
-  
+  const [currentUser, setCurrentUser] = useState({
+    username: "",
+    image: {},
+  });
+
+  async function fetchCurrentUser() {
+    const currentUser = await UserService.getCurrentUser();
+    setCurrentUser(currentUser);
+  }
+
+  useEffect(() => {
+    fetchCurrentUser();
+  }, []);
+
   return (
-    <div className="App">
-      <div className="container">
-        {comments.map((comment) => (
-          <Comment key={comment.id} comment={comment}></Comment>
-        ))}
+    <UserContext.Provider
+      value={{
+        currentUser,
+        setCurrentUser,
+      }}
+    >
+      <div className="App">
+        <div className="container">
+          <CommentsList />
+        </div>
       </div>
-    </div>
+    </UserContext.Provider>
   );
 }
 
