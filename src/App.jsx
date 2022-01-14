@@ -1,5 +1,5 @@
 import "./styles/sass/components/App.scss";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { UserContext } from "./components/context";
 import CommentsList from "./components/comments/CommentsList";
 import UserService from "./components/API/UserService";
@@ -11,8 +11,8 @@ function App() {
   });
 
   async function fetchCurrentUser() {
-    const currentUser = await UserService.getCurrentUser();
-    setCurrentUser(currentUser);
+    const fetchedUser = await UserService.getCurrentUser();
+    setCurrentUser(fetchedUser);
   }
 
   useEffect(() => {

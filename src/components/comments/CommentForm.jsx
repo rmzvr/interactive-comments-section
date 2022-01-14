@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import { UserContext } from "../context";
-import SubmitButton from "../UI/buttons/SubmitButton";
 import TextareaAutosize from "react-textarea-autosize";
+import SubmitButton from "../UI/buttons/SubmitButton";
+import { UserContext } from "../context";
 
 function CommentForm({ add, btnName }) {
   const { currentUser } = useContext(UserContext);

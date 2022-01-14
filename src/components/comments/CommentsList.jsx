@@ -12,8 +12,8 @@ function Comments() {
   const [selectedReply, setSelectedReply] = useState({});
 
   async function fetchComments() {
-    const comments = await CommentService.getAll();
-    setComments(comments);
+    const fetchedComments = await CommentService.getAll();
+    setComments(fetchedComments);
   }
 
   useEffect(() => {

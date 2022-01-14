@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 import { UserContext } from "../context";
 import getTimeSince from "../Date";
 import Reactions from "../Reactions";
@@ -9,7 +10,6 @@ import {
   EditButton,
 } from "../UI/buttons/CommentButtons";
 import SubmitButton from "../UI/buttons/SubmitButton";
-import TextareaAutosize from "react-textarea-autosize";
 import ReplyForm from "../replies/ReplyForm";
 
 function Comment({
@@ -38,7 +38,7 @@ function Comment({
 
     const updatedComment = {
       ...comment,
-      content: content,
+      content,
     };
 
     update(updatedComment, {});
@@ -46,7 +46,7 @@ function Comment({
   }
 
   return (
-    <React.Fragment>
+    <>
       <div className="comment">
         <Reactions
           commentUsername={comment.user.username}
@@ -63,11 +63,11 @@ function Comment({
             <div className="comment__owner">You</div>
           ) : null}
           <span className="comment__date">
-            {getTimeSince(new Date(parseInt(comment.createdAt, 10))) + " ago"}
+            {getTimeSince(new Date(parseInt(comment.createdAt, 10)))}
           </span>
           <div className="comment__btns">
             {comment.user.username === currentUser.username ? (
-              <React.Fragment>
+              <>
                 <RemoveButton
                   isEditing={isEditing}
                   remove={() => {
@@ -83,7 +83,7 @@ function Comment({
                 >
                   Edit
                 </EditButton>
-              </React.Fragment>
+              </>
             ) : (
               <ReplyButton
                 replyTextareaVisible={replyTextareaVisible}
@@ -124,7 +124,7 @@ function Comment({
           btnName="Reply"
         />
       </div>
-    </React.Fragment>
+    </>
   );
 }
 

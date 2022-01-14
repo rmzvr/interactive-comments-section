@@ -5,7 +5,7 @@ function SubmitButton({ children, submit, content }) {
     <button
       className="btn-submit"
       type="submit"
-      disabled={content.length >= 60 ? false : true}
+      disabled={!(content.length >= 60)}
       onClick={(e) => submit(e)}
     >
       {children}

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 import { UserContext } from "../context";
 import SubmitButton from "../UI/buttons/SubmitButton";
-import TextareaAutosize from "react-textarea-autosize";
 
 function ReplyForm({
   comment,
@@ -29,7 +29,7 @@ function ReplyForm({
       createdAt: Date.now(),
       id: Date.now(),
       user: currentUser,
-      replyingTo: replyingTo,
+      replyingTo,
     };
 
     add(comment, newReply);
@@ -58,11 +58,7 @@ function ReplyForm({
         placeholder="Add a reply..."
         onChange={(e) => setReply({ ...reply, content: e.target.value })}
       />
-      <SubmitButton
-        type="submit"
-        submit={addReply}
-        content={reply.content}
-      >
+      <SubmitButton type="submit" submit={addReply} content={reply.content}>
         {btnName}
       </SubmitButton>
     </form>

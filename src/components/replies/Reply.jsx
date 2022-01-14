@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import { UserContext } from "../context";
+import TextareaAutosize from "react-textarea-autosize";
+
 import getTimeSince from "../Date";
 import Reactions from "../Reactions";
 import {
@@ -8,8 +9,8 @@ import {
   EditButton,
 } from "../UI/buttons/CommentButtons";
 import SubmitButton from "../UI/buttons/SubmitButton";
-import TextareaAutosize from "react-textarea-autosize";
 import ReplyForm from "./ReplyForm";
+import { UserContext } from "../context";
 
 function Reply({
   comment,
@@ -39,7 +40,7 @@ function Reply({
 
     const updatedReply = {
       ...reply,
-      content: content,
+      content,
     };
 
     update(comment, updatedReply);
@@ -47,7 +48,7 @@ function Reply({
   }
 
   return (
-    <React.Fragment>
+    <>
       <div className="comment">
         <Reactions commentUsername={reply.user.username} score={reply.score} />
         <div className="comment__header">
@@ -61,11 +62,11 @@ function Reply({
             <div className="comment__owner">You</div>
           ) : null}
           <span className="comment__date">
-            {getTimeSince(new Date(parseInt(reply.createdAt, 10))) + " ago"}
+            {getTimeSince(new Date(parseInt(reply.createdAt, 10)))}
           </span>
           <div className="comment__btns">
             {reply.user.username === currentUser.username ? (
-              <React.Fragment>
+              <>
                 <RemoveButton
                   isEditing={isEditing}
                   remove={() => {
@@ -82,7 +83,7 @@ function Reply({
                 >
                   Edit
                 </EditButton>
-              </React.Fragment>
+              </>
             ) : (
               <ReplyButton
                 replyTextareaVisible={replyTextareaVisible}
@@ -101,7 +102,11 @@ function Reply({
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
-              <SubmitButton content={content} type="submit" submit={updateReply}>
+              <SubmitButton
+                content={content}
+                type="submit"
+                submit={updateReply}
+              >
                 Update
               </SubmitButton>
             </form>
@@ -122,7 +127,7 @@ function Reply({
           btnName="Reply"
         />
       </div>
-    </React.Fragment>
+    </>
   );
 }
 
