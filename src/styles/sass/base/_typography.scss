@@ -1,6 +1,42 @@
-body {
+html {
   font-family: "Rubik", sans-serif;
 
   font-size: 16px;
   font-weight: 400;
+  line-height: 24px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.comment__username,
+.comment__score-counter {
+  line-height: 19px;
+}
+
+.comment__owner {
+  font-size: 13px;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+.comment__score-counter,
+.comment__username,
+.comment__owner,
+.comment__replyingTo,
+.comment-btn,
+.modal__title,
+.modal__btn,
+.btn-submit {
+  font-weight: 500;
+}
+
+.btn-submit {
+  text-transform: uppercase;
+}
+
+.modal__title {
+  font-size: 24px;
+  line-height: 28px;
 }

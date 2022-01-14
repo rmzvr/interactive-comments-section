@@ -1,18 +1,24 @@
 .commentForm {
   width: 100%;
-  padding: 24px;
-  background: #ffffff;
-  border-radius: 8px;
+
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
+  padding: 24px;
+
+  border-radius: 8px;
+
+  background-color: var(--clr-neutral-white);
 }
 
 .commentForm__avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+
   margin-right: 16px;
+
+  border-radius: 50%;
 }
 
 .commentForm__textarea {
