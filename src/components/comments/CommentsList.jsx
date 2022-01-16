@@ -76,7 +76,7 @@ function Comments() {
   }
 
   return (
-    <div>
+    <>
       <Modal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
@@ -118,7 +118,7 @@ function Comments() {
         ))}
         <CommentForm add={addComment} btnName="Send" />
       </div>
-    </div>
+    </>
   );
 }
 

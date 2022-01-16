@@ -45,12 +45,6 @@
     height: 33%;
   }
 
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .comment__score-counter {
     display: flex;
     justify-content: center;
@@ -132,13 +126,13 @@
   color: var(--clr-primary-blue);
 }
 
-.reply-textarea {
+.reply-form {
   display: none;
   
   margin-top: 8px;
 }
 
-.reply-textarea.active {
+.reply-form.active {
   display: block;
 }
 

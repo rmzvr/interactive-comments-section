@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
+import Button from "../UI/Button";
 import { UserContext } from "../context";
-import SubmitButton from "../UI/buttons/SubmitButton";
 
 function ReplyForm({
   comment,
@@ -46,21 +46,27 @@ function ReplyForm({
   }
 
   return (
-    <form className="commentForm">
+    <form className="comment-form">
       <img
-        className="commentForm__avatar"
+        className="comment-form__avatar"
         src={currentUser.image.png}
         alt="avatar"
       />
       <TextareaAutosize
-        className="commentForm__textarea textarea"
+        className="comment-form__textarea textarea"
         value={reply.content}
         placeholder="Add a reply..."
         onChange={(e) => setReply({ ...reply, content: e.target.value })}
       />
-      <SubmitButton type="submit" submit={addReply} content={reply.content}>
+      <Button
+        type="submit"
+        disabled={!(reply.content.length >= 40)}
+        buttonSize="btn--large"
+        buttonStyle="btn--primary--solid"
+        handleClick={addReply}
+      >
         {btnName}
-      </SubmitButton>
+      </Button>
     </form>
   );
 }

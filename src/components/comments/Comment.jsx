@@ -1,16 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import { UserContext } from "../context";
 import getTimeSince from "../Date";
+import Button from "../UI/Button";
 import Reactions from "../Reactions";
-
-import {
-  RemoveButton,
-  ReplyButton,
-  EditButton,
-} from "../UI/buttons/CommentButtons";
-import SubmitButton from "../UI/buttons/SubmitButton";
 import ReplyForm from "../replies/ReplyForm";
+
+import { UserContext } from "../context";
 
 function Comment({
   comment,
@@ -24,7 +19,7 @@ function Comment({
   const [content, setContent] = useState("");
   const [replyTextareaVisible, setReplyTextareaVisible] = useState(false);
 
-  const classes = ["reply-textarea"];
+  const classes = ["reply-form"];
   if (replyTextareaVisible) {
     classes.push("active");
   }
@@ -68,29 +63,40 @@ function Comment({
           <div className="comment__btns">
             {comment.user.username === currentUser.username ? (
               <>
-                <RemoveButton
-                  isEditing={isEditing}
-                  remove={() => {
+                <Button
+                  type="button"
+                  disabled={isEditing}
+                  buttonStyle="btn--danger--text"
+                  buttonIcon="./images/icon-delete.svg"
+                  handleClick={() => {
                     setSelectedComment(comment);
                     setModalVisible(true);
                   }}
                 >
                   Delete
-                </RemoveButton>
-                <EditButton
-                  isEditing={isEditing}
-                  edit={() => setIsEditing(true)}
+                </Button>
+                <Button
+                  type="button"
+                  disabled={isEditing}
+                  buttonStyle="btn--primary--text"
+                  buttonIcon="./images/icon-edit.svg"
+                  handleClick={() => {
+                    setIsEditing(true);
+                  }}
                 >
                   Edit
-                </EditButton>
+                </Button>
               </>
             ) : (
-              <ReplyButton
-                replyTextareaVisible={replyTextareaVisible}
-                reply={() => setReplyTextareaVisible(true)}
+              <Button
+                type="button"
+                disabled={replyTextareaVisible}
+                buttonStyle="btn--primary--text"
+                buttonIcon="./images/icon-reply.svg"
+                handleClick={() => setReplyTextareaVisible(true)}
               >
                 Reply
-              </ReplyButton>
+              </Button>
             )}
           </div>
         </div>
@@ -102,13 +108,15 @@ function Comment({
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
-              <SubmitButton
-                content={content}
+              <Button
                 type="submit"
-                submit={updateComment}
+                disabled={!(comment.content.length >= 40)}
+                buttonSize="btn--large"
+                buttonStyle="btn--primary--solid"
+                handleClick={updateComment}
               >
                 Update
-              </SubmitButton>
+              </Button>
             </form>
           ) : (
             <p>{comment.content}</p>

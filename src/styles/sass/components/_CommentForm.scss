@@ -1,4 +1,4 @@
-.commentForm {
+.comment-form {
   width: 100%;
 
   display: flex;
@@ -12,7 +12,7 @@
   background-color: var(--clr-neutral-white);
 }
 
-.commentForm__avatar {
+.comment-form__avatar {
   width: 40px;
   height: 40px;
 
@@ -21,6 +21,6 @@
   border-radius: 50%;
 }
 
-.commentForm__textarea {
+.comment-form__textarea {
   margin-right: 16px;
 }

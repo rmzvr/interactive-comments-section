@@ -11,6 +11,12 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal__content {
   padding: 32px;
 
@@ -33,31 +39,10 @@
   color: var(--clr-neutral-grayish-blue);
 }
 
-.modal__btn {
-  width: 161px;
-  height: 48px;
-  
-  border-radius: 8px;
-
-  text-align: center;
-
-  color: var(--clr-neutral-white);
-
-  &:first-of-type {
-    margin-right: 14px;
-  }
-}
-
-.modal__btn--theme--fire {
-  background-color: var(--clr-primary-soft-red);
-}
-
-.modal__btn--theme--grass {
-  background-color: var(--clr-neutral-grayish-blue);
-}
-
-.modal.active {
+.modal__btns {
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  > * + * {
+    margin-left: 14px;
+  }
 }

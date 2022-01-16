@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import SubmitButton from "../UI/buttons/SubmitButton";
+import Button from "../UI/Button";
 import { UserContext } from "../context";
 
 function CommentForm({ add, btnName }) {
@@ -38,21 +38,27 @@ function CommentForm({ add, btnName }) {
   }
 
   return (
-    <form className="commentForm">
+    <form className="comment-form">
       <img
-        className="commentForm__avatar"
+        className="comment-form__avatar"
         src={currentUser.image.png}
         alt="avatar"
       />
       <TextareaAutosize
-        className="commentForm__textarea textarea"
+        className="comment-form__textarea textarea"
         value={comment.content}
         placeholder="Add a comment…"
         onChange={(e) => setComment({ ...comment, content: e.target.value })}
       />
-      <SubmitButton content={comment.content} type="submit" submit={addComment}>
+      <Button
+        type="submit"
+        disabled={!(comment.content.length >= 40)}
+        buttonSize="btn--large"
+        buttonStyle="btn--primary--solid"
+        handleClick={addComment}
+      >
         {btnName}
-      </SubmitButton>
+      </Button>
     </form>
   );
 }
