@@ -86,9 +86,9 @@ function Comments() {
           setSelectedReply({});
         }}
       />
-      <div className="comments">
+      <ul className="comments">
         {comments.map((comment) => (
-          <div className="comment-wrapper" key={comment.id}>
+          <li className="comment-wrapper" key={comment.id}>
             <Comment
               comment={comment}
               setModalVisible={setModalVisible}
@@ -98,9 +98,9 @@ function Comments() {
             />
 
             {comment.replies.length > 0 ? (
-              <div className="replies">
+              <ul className="replies">
                 {comment.replies.map((reply) => (
-                  <div className="comment-wrapper" key={reply.id}>
+                  <li className="comment-wrapper" key={reply.id}>
                     <Reply
                       comment={comment}
                       reply={reply}
@@ -110,14 +110,14 @@ function Comments() {
                       setSelectedReply={setSelectedReply}
                       update={updateComment}
                     />
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             ) : null}
-          </div>
+          </li>
         ))}
         <CommentForm add={addComment} btnName="Send" />
-      </div>
+      </ul>
     </>
   );
 }

@@ -28,7 +28,9 @@ function App() {
     >
       <div className="App">
         <div className="container">
-          <CommentsList />
+          <main className="main">
+            <CommentsList />
+          </main>
         </div>
       </div>
     </UserContext.Provider>
