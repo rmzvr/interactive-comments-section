@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9/hub/interactive-comments-using-react-js-scss-bem-Fg1k_Mdhm)
-- Live Site URL: [Github Pages](https://rzvr.github.io/interactive-comments-section/)
+- Live Site URL: [Github Pages](https://rmzvr.github.io/interactive-comments-section/)
 
 ## My process
 
@@ -64,7 +64,7 @@ In the next challenges, I will improve my skills in writing a React application 
 
 ## Author
 
-- Github - [rzvr](https://github.com/rzvr)
-- Codewars - [rzvr](https://www.codewars.com/users/rzvr)
-- LinkedIn - [Roman Zvir](https://www.linkedin.com/in/roman-zvir-8a4394214)
-- Frontend Mentor - [rzvr](https://www.frontendmentor.io/profile/rzvr)
+- [Github](https://github.com/rmzvr)
+- [LinkedIn](https://www.linkedin.com/in/rmzvr)
+- [Codewars](https://www.codewars.com/users/rmzvr)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/rmzvr)
